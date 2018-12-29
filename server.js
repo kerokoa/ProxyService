@@ -1,7 +1,10 @@
 // Dependencies
 const proxy = require('http-proxy');
-const https = require('https');
-const http = require('http');
+//const https = require('https');
+//const http = require('http');
+const https = require('follow-redirects').https;
+const http = require('follow-redirects').http;
+
 const crypto = require('crypto');
 const assert = require('assert');
 const zlib = require('zlib');
@@ -55,10 +58,12 @@ const httpsProxy = proxy.createProxyServer({
       return undefined;
     }
   }),
+  followRedirects: true,
   changeOrigin: true
 });
 
 const httpProxy = proxy.createProxyServer({
+  followRedirects: true,
   changeOrigin: true
 });
 
