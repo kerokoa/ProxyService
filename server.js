@@ -1,9 +1,9 @@
 // Dependencies
 const proxy = require('http-proxy');
-const https = require('https');
-const http = require('http');
-//const https = require('follow-redirects').https;
-//const http = require('follow-redirects').http;
+//const https = require('https');
+//const http = require('http');
+const https = require('follow-redirects').https;
+const http = require('follow-redirects').http;
 
 const crypto = require('crypto');
 const assert = require('assert');
